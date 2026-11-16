@@ -5,3 +5,9 @@ transcripts*.tar.gz
 system-prompt.txt
 prompt.txt
 *.log
+evidence/
+out-final/
+out-retry-a/
+out-retry-b/
+gh-local.exe
+inspect-sessions.mjs

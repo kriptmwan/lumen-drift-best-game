@@ -1,29 +1,31 @@
 # Lumen Drift
 
-[![make.fun](https://make.fun/badge/best-game-01.svg)](https://make.fun/c/best-game-01)
-[![Rank](https://make.fun/badge/best-game-01/kriptmwan/lumen-drift-best-game/rank.svg)](https://make.fun/c/best-game-01)
-[![Reward](https://make.fun/badge/best-game-01/kriptmwan/lumen-drift-best-game/reward.svg)](https://make.fun/c/best-game-01)
+[![make.fun](https://make.fun/badge/best-game-01.svg)](https://make.fun/bounty/best-game-01)
+[![Rank](https://make.fun/badge/best-game-01/kriptmwan/lumen-drift-best-game/rank.svg)](https://make.fun/bounty/best-game-01)
+[![Reward](https://make.fun/badge/best-game-01/kriptmwan/lumen-drift-best-game/reward.svg)](https://make.fun/bounty/best-game-01)
 
-An original offline orbital salvage game. Gather four artifacts in each of two fields, then return to the green dock. Dodge coral mines and preserve your hull. After the first haul, return to repair or press 1 to enter a denser field for double salvage pay without repairs.
+A four-sector orbital salvage expedition. Chain recoveries for score, burst between wrecks without overheating, repel hazards, then dock to bank your cargo and choose a permanent upgrade. Drifters circle the wreck, sentinels telegraph beam attacks, and hunters pursue your ship. Complete the Dawn Engine contract to win.
 
 ## Play
 
 Run `node serve.ts --port 8793`, then visit http://127.0.0.1:8793. The game has no external assets, packages, fonts, or requests. All artwork is drawn with Canvas2D and sound is synthesized with Web Audio.
 
-- WASD / arrow keys: steer
-- Shift: boost while thrust reserve remains
-- E: dock (requires four artifacts and proximity to the dock)
-- 1: accept double-pay risk after first cargo bay fills
-- R: restart
-- Click: begin, restart, or interact with the dock / route choice
+- WASD / arrow keys: steer (diagonal movement is normalized)
+- Shift: burst; overheating locks boost until the drive cools
+- Space / click the field: repulsor, with a seven-second cooldown
+- E / click harbor: dock after meeting the sector quota
+- 1 / 2 / 3: choose an upgrade at the dock
+- P / Escape: pause; changing window focus also pauses
+- M: toggle synthesized sound
+- R: restart; Enter / Space: launch from the briefing
 
 ## Submission
 
-`MAKEFUN_OUTPUT_DIR=out node main.ts` copies the game and three genuine browser screenshots, then builds the deterministic dossier with the unchanged competition vendor library. Node 22.18+; no installation or build step.
+`MAKEFUN_OUTPUT_DIR=out node main.ts` copies the game and four genuine browser screenshots, then builds the deterministic dossier with the unchanged competition vendor library. Node 22.18+; no installation or build step.
 
 ## Verification
 
-Chrome keyboard-event playtest completed two fields, four artifacts each, and docked with 1,190 credits and 80 hull. Restart returned score and cargo to zero. Two independent dossier builds matched SHA-256. Screenshot capture uses Chrome's actual renderer at 1200×800, JPEG quality 85, without editing or compositing.
+Run `node --test tests/*.test.mjs` for mission regression checks. Real Chrome keyboard-event play completed all four sectors, delivered all 24 items, and won with 7,690 credits and 112/130 hull. All three upgrade choices were used during the run. No JavaScript errors were captured. The four 1280×746 JPEG screenshots are unedited Chrome renders of play, briefing, dock upgrades, and victory, all below 256 KiB. Two independent builds matched all 15 output files byte for byte; the competition vendor library remains unchanged.
 
 The screenshot vision-review service returned HTTP 403; automated gameplay and screenshot capture succeeded, but no claim of visual human review is made.
 

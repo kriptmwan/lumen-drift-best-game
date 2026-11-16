@@ -3,12 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lumen Drift</title>
+<title>Lumen Drift · Salvage Expedition</title>
 <link rel="stylesheet" href="./src/style.css">
 </head>
 <body>
-<canvas id="game" aria-label="Lumen Drift orbital salvage game"></canvas>
+<main id="flight-deck">
+<canvas id="game" aria-label="Orbital salvage field with ship, cargo, hazards and harbor"></canvas>
+<div id="screens"></div>
+</main>
+<footer><span>WASD / ARROWS · STEER &nbsp; SHIFT · BURST &nbsp; SPACE · REPULSE &nbsp; E · DOCK</span><nav><button id="pause">PAUSE / P</button><button id="sound">SOUND ON / M</button></nav></footer>
 <div id="status" role="status" aria-live="polite"></div>
-<script type="module" src="./src/main.js"></script>
+<script type="module" src="./src/flight.js"></script>
 </body>
 </html>
