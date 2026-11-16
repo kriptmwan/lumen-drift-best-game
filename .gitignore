@@ -1,0 +1,7 @@
+best-game-01-kit/
+out/
+out-repeat/
+transcripts*.tar.gz
+system-prompt.txt
+prompt.txt
+*.log
